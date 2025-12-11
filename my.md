@@ -54,7 +54,7 @@ The order is shown in the image here. Upon first entering the tutorial scene the
 
 Speaking of visual style, because this is a medieval inspired game I stuck with that aesthetic and created a scroll like background for the instructions and then used a dynamic frame from the corresponding animations, recoloring them to look like old ink on paper that's faded to brown and positioning them along with brown text explanations.
 
-![Screen Flow](MadImages/screens.jpg)
+![Screen Flow](MadImages/screensFlow.jpg)
 
 Because our group lacks a User interface and Input Role, all of the screens I designed were created in the hopes of being easy to implement. I implemented the main scene changes in the godot scripts. They lack buttons but rather if they need user input, I stuck with ‘press any key to ‘blank’’. In procreate again I designed the start screen, and screen, and windscreen which are implemented as individual control-based scenes that all contain their own Logic for handling input or timed fades. I again implemented the script for all of these scenes. The start screen listens for any key or mouse press and then immediately loads the next gameplay scene which is TutorialOutdoors. I also implemented the logic for going to the end screen which reads ‘game over’ upon the player’s death and the Win Screen that shows when the boss is defeated and has dropped the crown. Both the end screen and the wind screen fade to black using a timed fade tween_property on a ColorRect Before changing the scene to return to the start screen. Essentially I created a loop with basic key press as user input due to lacking someone for the official role.
 
