@@ -1,23 +1,26 @@
-## Asset Credits
+## Madeleine Oesterer
+### Main Role: Visuals and Animations
 
-### Player
+### Asset Credits
+
+#### Player
 - **Soldier sprite & Arrow** from [Tiny RPG Character Asset Pack](https://zerie.itch.io/tiny-rpg-character-asset-pack)
 
-### Tilesets & Dungeon Objects
+#### Tilesets & Dungeon Objects
 - **Dungeon tileset & animated objects** (torches, chest, candlestick, flag, trap)  
   from [Dungeon Asset Pack](https://pixel-poem.itch.io/dungeon-assetpuck)
 - **Outside tileset** from  
   [Hana Caraka Topdown Tileset](https://otterisk.itch.io/hana-caraka-topdown-tileset)
 
-### Enemies
+#### Enemies
 - **Vampire & Skeleton sprites** from  
   [Dungeon Asset Pack](https://pixel-poem.itch.io/dungeon-assetpuck)
 
-### Boss
+#### Boss
 - **Boss base sprite** from  
   [Animated Final Boss Sprites](https://newastronaut.itch.io/animated-final-boss-sprites)
 
-### Projectiles
+#### Projectiles
 - **Fireball animation** from  
   [Fireball Animation Pack](https://nyknck.itch.io/fireball-animation)
 
@@ -59,23 +62,30 @@ Speaking of visual style, because this is a medieval inspired game I stuck with 
 Because our group lacks a User interface and Input Role, all of the screens I designed were created in the hopes of being easy to implement. I implemented the main scene changes in the godot scripts. They lack buttons but rather if they need user input, I stuck with ‘press any key to ‘blank’’. In procreate again I designed the start screen, and screen, and windscreen which are implemented as individual control-based scenes that all contain their own Logic for handling input or timed fades. I again implemented the script for all of these scenes. The start screen listens for any key or mouse press and then immediately loads the next gameplay scene which is TutorialOutdoors. I also implemented the logic for going to the end screen which reads ‘game over’ upon the player’s death and the Win Screen that shows when the boss is defeated and has dropped the crown. Both the end screen and the wind screen fade to black using a timed fade tween_property on a ColorRect Before changing the scene to return to the start screen. Essentially I created a loop with basic key press as user input due to lacking someone for the official role.
 
 
+### Sub-Role: Audio
 
+### Audio Credits
 
-## Audio Credits
-
-### Background Music
+#### Background Music
 - **BGM** from  
   [8-Bit Fantasy Adventure Music Pack](https://xdeviruchi.itch.io/8-bit-fantasy-adventure-music-pack)
 
-### Sound Effects
+#### Sound Effects
 - **Player and Skeleton/Vampire attack sounds** from  
   [ZapSplat](https://www.zapsplat.com/)  
   *(Some effects edited/shortened by me.)*
 
 ---
 
-## SubRole Audio
-
 The background music came from a single itch.io source. the 8-Bit fantasy music pack embodied the pixelated visuals with a slightly older game design and feel. There were several more songs however I chose to use just three of them. One for the start screen, one for the tutorial, and one for the main floor dungeon. Each scene had their own audio stream player with the music configured in Godot to autoplay, loop, and adjusted to background level decibels (-16).
 
 I realized that having too many sound effects could actually be detrimental to the feel of a game. If there are too many of them it can feel overwhelming and cluttered. The sound effects all came from zapsplat.com However I edited some of the effects in a simple browser audio editor in order to shorten them and cut out unnecessary parts of the files. The player and the enemies (vampire and skeleton) each have a sound for all of their attacks as well as a sound that plays upon their death. The player has three attacks so three corresponding sounds which I attempted to match to the movement. The sword slash sounds like a sword slash. The shockwave sound is the rumbling from a landslide, a shortened snippet. The arrow was a simple bow twang (shortened for time). The player's death is a simple thump as if the player is falling to the ground. The skeleton also has a swiping sound as it's attacking with some sort of scythe. However, I added a squelching effect to make the sound slightly more visceral as an attack. When the skeleton dies you can hear a cluttering sound as if a pile of bones has fallen (shortened from a longer cluttering sound). The vampire attack sound is a growl that matches up with a snarling fireball being hurled. The vampire death sound is a groan, because this figure is already undead and turns to ash, I wanted it to feel like a whisper. The boss also has a few sounds, one corresponding to its spawning, one for each of the attack animations (a punch, magic swish, disorienting reversal of an audio snippet) and one for its death (a tired echoing roar) that reflect the boss’ demise in a large cavern that is the dungeon room. As there weren't too many sound effects that corresponded to each character, I used a simple audio stream player 2D for each sound and modified the script to include the audio players as onready variables and played them along with the animations.
+
+---
+
+### Outside My Role
+
+Outside of my role,  I've already mentioned a few things that I think would sit outside of a purely animation and visual. I implemented the shooting arrow and cardinal direction logic as mentioned earlier  which goes slightly under game mechanics programming. I also created the tutorial pop up scene logic with a scripted q-based display and input locking. I also wrote interaction logic for the pop-ups and the starscreen so that pressing any key would progress the tutorial. This goes slightly into UI/UX engineering and gameplay flow scripting territory. Building off of that is the scene flow and game Loop. I created the start -> tutorial -> dungeon -> win/lose -> restart loop Logic and scripts for the transitions, input handling, fades, and the flow diagram. 
+
+For behind the scenes work, we didn't have a producer, so many of the small things a producer would normally be in charge of I helped contribute to. I instigated and created a lot of the communication channels and servers we used as a group. I also reached out to the other groups and organized meetups for when to do the project reports. I created the slide that was used in the final presentation. I created and uploaded the web version of our game to itch for the presentation and final version. I also tended to write a lot of the base paragraphs on our progress reports (the one we did on ourselves as well as the other group).
+
