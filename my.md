@@ -31,6 +31,7 @@ Throughout the game all of my design decisions were guided by a cohesive visual 
 
 ---
 
+## Player Animations & Additions
 To save time I found most of our base assets on itch.io as seen linked above.
 
 However in order to make the game more cohesive and feel more professional, a lot of the assets needed modifications or extra animations that weren't given through itch.io.
@@ -41,20 +42,25 @@ I started with the player. Our game is a top-down point of view, and this soldie
 
 The third attack is the player shooting an arrow, in Godot I created an arrow scene that was linked in the animation player of the corresponding attack so that the arrow would spawn at the right time with the animation. I created the base script for the arrow projectile that moves in a set direction, rotates to face its trajectory, and was later modified by our group member Leo to make sure that the arrow damages any enemy it collides with and deletes itself on impact. I also wrote the code snippets inside the player script _shoot_arrow() and _get_cardinal_direction() that spawn and position the arrow, choosing the direction based on the player's facing or movement and the offset so that it appears at the bow.
 
+## Tilesets and Tile Animations
 The tile sets were not modified visually by me, they were two separate tile sets found on itch.io, one for the dungeon and one for the outside tutorial level. The animated objects however came as several sets of separate PNG files which to my knowledge were not compatible with creating animated tile sets to be used throughout the level. I again used procreate to arrange the pngs in the correct format, a horizontal sprite sheet and then added to the project by making the animated tile sets within a separate tile map layer in Godot. This formatting was also used to make it easier to animate objects and in total I configured: the torches (side and front), chest, candlestick, flag, coins, and a trap (which we did not end up using).
 
+## Enemies
 The enemies, vampire and skeletons rights were found on itch.io. When searching for enemies I took into account art style as well as color to make sure these monsters were something I could see inhabiting the level, aka they didn't look out of place. After configuring them and animating them in godot I resized them to be relative to the player.
 Later it was decided we wanted one of the enemies to have a projectile attack, however it was difficult finding an enemy on itch.io that had a projectile attack while also matching our visual style, so I found a fireball animation that could be added on to the vampire's existing attack (which was originally a bite) to make it look like the vampire was breathing a fireball at the player. The fireball scene was already created. I just added the animated sprite 2d.
 
+## Boss Modifications & Additions
 The boss assets are also from itch.io, I chose this asset because it had several attack animations and seemed to have four cardinal direction animations. Once I downloaded the asset I noticed this wasn't quite true, as only the walking animation seemed to have 4 directions. However, since our boss does not heavily rely on the animation to deal damage, but rather as an indicator for other projectiles being created with code, it ended up working out. The main thing I modified with the boss was the color palette. It was very clear that the original sprite animation color palette did not suit our visual style which included a lot of purples and gold and a darker dungeon aesthetic. I wanted to continue this visual language so for all the existing animations I modified the color palette to go from a light sci-fi blue glow to a mystical purple magic that better suited our needs. I also modified some of the animations to suit our vague narrative of the soldier being cursed by the boss. The cursed item used to inflict the curse upon the player is a crown. If you look carefully at the second row within the image, you can see a vague crown-like shape when it is spawning compared to the original right above it. I also created an original death animation for the boss, as the asset downloaded from itch.io did not have one. Again I animated the boss using an animated player, and created an animation tree with conditionals from one animation to the next as seen here.
 
 ![Boss Modifications](MadImages/bossMods.jpg)
 ![Boss Animation Tree](MadImages/animationTree.png)
 
+## Small Original Additions
 I created two small assets that are used throughout the game. I created the altar sprite, which is used to upgrade the player. I also designed the crown and created the scene and script in crown and the lines in boss that drop the crown as the boss’ position once the player has defeated the boss.
 
 ![Original Created Assets](MadImages/ogAssets.jpg)
 
+## Tutorial Popups and UI
 On the tutorial stage, in order to get the player familiar with the game mechanics I created several tutorial pop-up screens in procreate. I also created the script within the tutorialPopup scene That controls the UI essentially and temporarily locks player input while the instructional pop-up is displayed. It also queues up the tutorial textures and shows them one at a time and automatically sizes them to fill the screen, advancing to the next image whenever the player presses any key. When the queue is empty it hides itself and unlocks the player again. In the RoomController script of the tutorial I added the relevant lines to use and call the tutorial pop-up screens. This includes the declaration reference to the pop-up, the pop-up instance, and the helper function that triggers the first tutorial screen.
 
 ![Tutorial Popups](MadImages/tutorialPopups.jpg)
@@ -65,6 +71,7 @@ Speaking of visual style, because this is a medieval inspired game I stuck with 
 
 ![Screen Flow](MadImages/screensFlow.jpg)
 
+## Gameplay Screens and Scene Flow
 Because our group lacks a User interface and Input Role, all of the screens I designed were created in the hopes of being easy to implement. I implemented the main scene changes in the godot scripts. They lack buttons but rather if they need user input, I stuck with ‘press any key to ‘blank’’. In procreate again I designed the start screen, and screen, and windscreen which are implemented as individual control-based scenes that all contain their own Logic for handling input or timed fades. I again implemented the script for all of these scenes. The start screen listens for any key or mouse press and then immediately loads the next gameplay scene which is TutorialOutdoors. I also implemented the logic for going to the end screen which reads ‘game over’ upon the player’s death and the Win Screen that shows when the boss is defeated and has dropped the crown. Both the end screen and the wind screen fade to black using a timed fade tween_property on a ColorRect Before changing the scene to return to the start screen. Essentially I created a loop with basic key press as user input due to lacking someone for the official role.
 
 ---
