@@ -24,6 +24,7 @@
 - **Fireball animation** from  
   [Fireball Animation Pack](https://nyknck.itch.io/fireball-animation)
 
+---
 
 To save time I found most of our base assets on itch.io as seen linked above.
 
@@ -61,6 +62,7 @@ Speaking of visual style, because this is a medieval inspired game I stuck with 
 
 Because our group lacks a User interface and Input Role, all of the screens I designed were created in the hopes of being easy to implement. I implemented the main scene changes in the godot scripts. They lack buttons but rather if they need user input, I stuck with ‘press any key to ‘blank’’. In procreate again I designed the start screen, and screen, and windscreen which are implemented as individual control-based scenes that all contain their own Logic for handling input or timed fades. I again implemented the script for all of these scenes. The start screen listens for any key or mouse press and then immediately loads the next gameplay scene which is TutorialOutdoors. I also implemented the logic for going to the end screen which reads ‘game over’ upon the player’s death and the Win Screen that shows when the boss is defeated and has dropped the crown. Both the end screen and the wind screen fade to black using a timed fade tween_property on a ColorRect Before changing the scene to return to the start screen. Essentially I created a loop with basic key press as user input due to lacking someone for the official role.
 
+---
 
 ### Sub-Role: Audio
 
@@ -89,3 +91,4 @@ Outside of my role,  I've already mentioned a few things that I think would sit 
 
 For behind the scenes work, we didn't have a producer, so many of the small things a producer would normally be in charge of I helped contribute to. I instigated and created a lot of the communication channels and servers we used as a group. I also reached out to the other groups and organized meetups for when to do the project reports. I created the slide that was used in the final presentation. I created and uploaded the web version of our game to itch for the presentation and final version. I also tended to write a lot of the base paragraphs on our progress reports (the one we did on ourselves as well as the other group).
 
+---
