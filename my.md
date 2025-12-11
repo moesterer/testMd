@@ -26,6 +26,11 @@
 
 ---
 
+### Visual Style
+Throughout the game all of my design decisions were guided by a cohesive visual style rooted in a dark medieval dungeon aesthetic that was blended with royal themes. This was gathered after our initial plan and the narrative of our game was thought up as a player cursed to roam the dungeon forever because they are cursed by a crown. Because the game was built using 16x16 pixel art tiles, after the tile set was chosen nothing could be overly large or detailed, instead the visuals rely on simplicity, clarity, with a hint of a nostalgic feel for older pixel art games. The color palette leans heavily into warm but shadowy tones with lots of reddish purples, deep royal purples, and gold accents. Keeping these in mind both unify the environment as well as emphasize the cursed crown narrative motif. This palette fuelled a lot of my original designs, from recoloring and modifying existing animations to creating the gameplay screens. To match the dungeon atmosphere I also wanted any UI elements to echo aged parchment and faded ink. Overall the visual direction embraces the charms of retro pixel art while simultaneously reinforcing the games’ royal dark fantasy identity.
+
+---
+
 To save time I found most of our base assets on itch.io as seen linked above.
 
 However in order to make the game more cohesive and feel more professional, a lot of the assets needed modifications or extra animations that weren't given through itch.io.
